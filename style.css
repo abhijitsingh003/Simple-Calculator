@@ -339,6 +339,8 @@ body {
         /* Let content breathe or use safe areas */
         border: none;
         padding-bottom: env(safe-area-inset-bottom);
+        z-index: 100;
+        /* Ensure frame is below touches? No, keypad inside needs high z-index */
     }
 
     /* Hide fake hardware elements on real mobile */
@@ -381,6 +383,8 @@ body {
         max-height: 90px;
         font-size: 8vw;
         /* Scale font properly */
+        z-index: 1000;
+        /* Force clickable */
     }
 
     .btn-zero {
