@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>iPhone Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="iphone-frame">
         <div class="notch"></div>
@@ -13,23 +16,27 @@
         <div class="volume-button volume-up"></div>
         <div class="volume-button volume-down"></div>
         <div class="silent-switch"></div>
-        
+
         <div class="screen">
             <div class="status-bar">
                 <span class="time">9:41</span>
                 <div class="status-icons">
-                    <svg class="icon-signal" viewBox="0 0 24 24" fill="currentColor"><path d="M2 22h20V2z"/></svg>
-                    <svg class="icon-wifi" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C7.95 2 4.21 3.34 1.2 5.6L12 19l10.8-13.4C19.79 3.34 16.05 2 12 2z"/></svg>
+                    <svg class="icon-signal" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2 22h20V2z" />
+                    </svg>
+                    <svg class="icon-wifi" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C7.95 2 4.21 3.34 1.2 5.6L12 19l10.8-13.4C19.79 3.34 16.05 2 12 2z" />
+                    </svg>
                     <div class="battery">
                         <div class="battery-level"></div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="display-container">
                 <div class="display">0</div>
             </div>
-            
+
             <div class="keypad">
                 <div class="row">
                     <button class="btn btn-secondary" data-action="clear">AC</button>
@@ -61,11 +68,12 @@
                     <button class="btn btn-accent" data-action="calculate">=</button>
                 </div>
             </div>
-            
+
             <div class="home-indicator"></div>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
