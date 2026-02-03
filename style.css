@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+:root {
+    --bg-color: #000000;
+    --btn-primary: #333333;
+    --btn-secondary: #5a5a5a;
+    --btn-accent: #ff9f0a;
+    --text-white: #ffffff;
+    --text-black: #000000;
+    --frame-color: #1a1a1a;
+    --frame-border: #383838;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e0e0e0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* iPhone Frame */
+.iphone-frame {
+    position: relative;
+    width: 380px;
+    height: 780px;
+    background-color: var(--bg-color);
+    border-radius: 55px;
+    box-shadow:
+        0 0 0 2px #333,
+        0 0 0 6px #1a1a1a,
+        0 0 0 8px #000,
+        30px 30px 60px rgba(0, 0, 0, 0.4),
+        -10px -10px 30px rgba(255, 255, 255, 0.1) inset;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Hardware Buttons */
+.power-button,
+.volume-button,
+.silent-switch {
+    position: absolute;
+    background: #1a1a1a;
+    border-radius: 4px;
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+.power-button {
+    right: -10px;
+    top: 200px;
+    width: 6px;
+    height: 60px;
+}
+
+.volume-button {
+    left: -10px;
+    width: 6px;
+    height: 45px;
+}
+
+.volume-up {
+    top: 180px;
+}
+
+.volume-down {
+    top: 235px;
+}
+
+.silent-switch {
+    left: -10px;
+    top: 130px;
+    width: 6px;
+    height: 25px;
+}
+
+/* Screen */
+.screen {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    position: relative;
+    color: var(--text-white);
+}
+
+/* Status Bar */
+.status-bar {
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+
+.status-icons {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.status-icons svg {
+    width: 18px;
+    height: 18px;
+}
+
+.battery {
+    width: 24px;
+    height: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 3px;
+    padding: 1px;
+    position: relative;
+}
+
+.battery::after {
+    content: '';
+    position: absolute;
+    right: -2px;
+    top: 3px;
+    width: 2px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 0 1px 1px 0;
+}
+
+.battery-level {
+    width: 60%;
+    height: 100%;
+    background: #fff;
+    border-radius: 1px;
+}
+
+/* Notch */
+.notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 35px;
+    background-color: #000;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    z-index: 10;
+}
+
+/* Display */
+.display-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0 15px 15px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    /* Ensure updates don't push keypad */
+    min-height: 0;
+    /* Flexbox overflow fix */
+}
+
+.display {
+    font-size: 80px;
+    /* Base size */
+    font-weight: 300;
+    line-height: 1.1;
+    word-break: break-all;
+    text-align: right;
+    width: 100%;
+    white-space: normal;
+    /* Allow wrapping */
+}
+
+.history-display {
+    font-size: 32px;
+    color: #888;
+    margin-bottom: 5px;
+    min-height: 40px;
+    text-align: right;
+    width: 100%;
+    font-weight: 300;
+    opacity: 0.8;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    /* Limit height to prevent taking over screen completely, allow it to "push" visually but maybe fade/scroll if extreme? 
+       Actually user wants it to look like image. Image has it taking space. 
+    */
+    flex-shrink: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+/* Keypad */
+.keypad {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-bottom: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+    flex-shrink: 0;
+    /* Keypad shouldn't shrink */
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.btn {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: none;
+    font-size: 32px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.2),
+        0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    filter: brightness(130%);
+    transform: scale(0.98);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background-color: var(--btn-primary);
+    color: var(--text-white);
+}
+
+.btn-secondary {
+    background-color: var(--btn-secondary);
+    color: var(--text-white);
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.btn-secondary:active,
+.btn-secondary.active {
+    background-color: #7a7a7a;
+    filter: none;
+}
+
+
+.btn-accent {
+    background-color: var(--btn-accent);
+    color: var(--text-white);
+    font-size: 38px;
+    padding-bottom: 4px;
+}
+
+.btn-accent[data-key="*"],
+.btn-accent[data-key="+"] {
+    padding-bottom: 0px;
+}
+
+.btn-accent[data-key="-"] {
+    padding-bottom: 4px;
+}
+
+
+.btn-accent:active {
+    background-color: #fbc78d;
+    color: var(--btn-accent);
+    filter: none;
+}
+
+.btn-accent.is-active {
+    background-color: #fff;
+    color: var(--btn-accent);
+}
+
+.btn-zero {
+    width: 72px;
+    border-radius: 50%;
+    justify-content: center;
+    padding-left: 0;
+}
+
+/* Home Indicator */
+.home-indicator {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 3px;
+    opacity: 0.6;
+}

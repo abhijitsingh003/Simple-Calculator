@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="iphone-frame">
+        <div class="notch"></div>
+        <div class="power-button"></div>
+        <div class="volume-button volume-up"></div>
+        <div class="volume-button volume-down"></div>
+        <div class="silent-switch"></div>
+
+        <div class="screen">
+            <div class="status-bar">
+                <span class="time">9:41</span>
+                <div class="status-icons">
+                    <svg class="icon-signal" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2 22h20V2z" />
+                    </svg>
+                    <svg class="icon-wifi" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C7.95 2 4.21 3.34 1.2 5.6L12 19l10.8-13.4C19.79 3.34 16.05 2 12 2z" />
+                    </svg>
+                    <div class="battery">
+                        <div class="battery-level"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="display-container">
+                <div class="history-display"></div>
+                <div class="display">0</div>
+            </div>
+
+            <div class="keypad">
+                <div class="row">
+                    <!-- Row 1: Backspace, AC, %, / -->
+                    <button class="btn btn-secondary" data-action="backspace">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path>
+                            <line x1="18" y1="9" x2="12" y2="15"></line>
+                            <line x1="12" y1="9" x2="18" y2="15"></line>
+                        </svg>
+                    </button>
+                    <button class="btn btn-secondary" data-action="clear">AC</button>
+                    <button class="btn btn-secondary" data-action="percent">%</button>
+                    <button class="btn btn-accent" data-action="operator" data-key="/">÷</button>
+                </div>
+                <div class="row">
+                    <button class="btn btn-primary" data-number="7">7</button>
+                    <button class="btn btn-primary" data-number="8">8</button>
+                    <button class="btn btn-primary" data-number="9">9</button>
+                    <button class="btn btn-accent" data-action="operator" data-key="*">×</button>
+                </div>
+                <div class="row">
+                    <button class="btn btn-primary" data-number="4">4</button>
+                    <button class="btn btn-primary" data-number="5">5</button>
+                    <button class="btn btn-primary" data-number="6">6</button>
+                    <button class="btn btn-accent" data-action="operator" data-key="-">−</button>
+                </div>
+                <div class="row">
+                    <button class="btn btn-primary" data-number="1">1</button>
+                    <button class="btn btn-primary" data-number="2">2</button>
+                    <button class="btn btn-primary" data-number="3">3</button>
+                    <button class="btn btn-accent" data-action="operator" data-key="+">+</button>
+                </div>
+                <div class="row last-row">
+                    <!-- Row 5: +/-, 0, ., = -->
+                    <button class="btn btn-primary" data-action="sign">+/-</button>
+                    <button class="btn btn-primary" data-number="0">0</button>
+                    <button class="btn btn-primary" data-action="decimal">.</button>
+                    <button class="btn btn-accent" data-action="calculate">=</button>
+                </div>
+            </div>
+
+            <div class="home-indicator"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
