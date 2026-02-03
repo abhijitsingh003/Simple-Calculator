@@ -202,4 +202,23 @@ document.addEventListener('DOMContentLoaded', () => {
     function inputPercent() {
         currentInput = String(parseFloat(currentInput) / 100);
     }
+
+    // Add touch feedback handling
+    const buttons = document.querySelectorAll('button');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('touchstart', (e) => {
+            // e.preventDefault(); // Don't prevent default, or click might not fire on some devices unless we handle that too. 
+            // Better to just let click happen but show visual immediately.
+            btn.classList.add('active');
+        }, { passive: true });
+
+        btn.addEventListener('touchend', () => {
+            btn.classList.remove('active');
+        });
+
+        btn.addEventListener('touchcancel', () => {
+            btn.classList.remove('active');
+        });
+    });
 });
