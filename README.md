@@ -1,6 +1,6 @@
-# iPhone Calculator Replica
+# iOS Calculator
 
-This is a fully functional clone of the iPhone calculator, built with HTML, CSS, and JavaScript. It features a realistic UI, complete with animations, improved logic for sequential calculations, and responsive text sizing.
+This is a fully functional calculator, built with HTML, CSS, and JavaScript. It features a realistic UI, complete with animations, improved logic for sequential calculations, and responsive text sizing.
 
 ## Preview
 
@@ -12,5 +12,5 @@ This is a fully functional clone of the iPhone calculator, built with HTML, CSS,
 - **Responsive Display**: Text wraps and scales for long numbers.
 - **Dark Mode**: Built with the native dark theme colors.
 
-## How to Run
-Simply open `index.html` in your web browser.
+## Live link:
+### https://ios-calculator-abzt.vercel.app/
