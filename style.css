@@ -180,14 +180,25 @@ body {
 
 .display {
     font-size: 80px;
-    /* Base size */
     font-weight: 300;
     line-height: 1.1;
-    word-break: break-all;
     text-align: right;
     width: 100%;
-    white-space: normal;
-    /* Allow wrapping */
+    white-space: nowrap;
+    /* Prevent wrapping */
+    overflow-x: auto;
+    /* Enable horizontal scroll */
+    overflow-y: hidden;
+    scrollbar-width: none;
+    /* Firefox: Hide scrollbar */
+    padding-left: 10px;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+}
+
+/* Chrome/Safari: Hide scrollbar */
+.display::-webkit-scrollbar {
+    display: none;
 }
 
 .history-display {
@@ -199,15 +210,23 @@ body {
     width: 100%;
     font-weight: 300;
     opacity: 0.8;
-    word-wrap: break-word;
-    white-space: pre-wrap;
-    /* Limit height to prevent taking over screen completely, allow it to "push" visually but maybe fade/scroll if extreme? 
-       Actually user wants it to look like image. Image has it taking space. 
-    */
-    flex-shrink: 1;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    white-space: nowrap;
+    /* Prevent wrapping so '=' stays on line */
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+    flex-shrink: 0;
+    /* Don't shrink, scroll instead */
+    display: block;
+    /* Change from flex to block to allow simple text scrolling/nowrap behavior more predictably */
+    padding-left: 10px;
+}
+
+.history-display::-webkit-scrollbar {
+    display: none;
 }
 
 /* Keypad */
